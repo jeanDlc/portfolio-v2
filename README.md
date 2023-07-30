@@ -4,11 +4,11 @@ This is my portfolio v2. An improved version with updated data
 
 ## Stack
 
-To learn more about Next.js, take a look at the following resources:
+Technologies used to create this project
 
 - Next Js
 - Tyepscript
-- Styled components
+- Sass
 - DatoCMS
 - GraphQL
 
