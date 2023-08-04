@@ -1,9 +1,9 @@
 import { Job } from "@/types/interfaces";
-import { Pill } from "../Pill";
-import { Card } from "../Card";
+import { Pill } from "@/app/components/Pill";
+import { Card } from "@/app/components/Card";
 import { parseDate } from "@/utils";
 
-import styles from "./jobCard.module.scss";
+import styles from "@/app/components/Job/styles.module.scss";
 
 export const JobCard = ({ job }: { job: Job }) => {
 	const { date, description, position, stack, company, url, id } = job;

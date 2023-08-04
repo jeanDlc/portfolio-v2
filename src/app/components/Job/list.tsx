@@ -1,5 +1,5 @@
-import { JobCard } from "@/app/components/JobCard";
-import styles from "./jobList.module.scss";
+import { JobCard } from "@/app/components/Job/card";
+import styles from "@/app/components/Job/styles.module.scss";
 
 import type { Job } from "@/types/interfaces";
 

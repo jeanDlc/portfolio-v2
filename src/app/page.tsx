@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import { JobList } from "@/app/components/JobList";
+import { JobList } from "@/app/components/Job/list";
 
 export default function Home() {
 	return (
