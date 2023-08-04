@@ -1,0 +1,14 @@
+@import "@/app/mixins";
+@import "@/app/variables.scss";
+
+
+.stackList{
+    display: flex;
+    gap: 8px;
+}
+
+.date{
+    font-size: $textXS;
+    color: $textSecondary2;
+    text-transform: uppercase;
+}

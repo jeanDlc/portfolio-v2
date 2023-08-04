@@ -1,1 +1,24 @@
-.main {}
+@import "@/app/variables.scss";
+@import "@/app/mixins";
+
+.main {
+    margin-top: 2rem;
+    .description{
+        color: $textSecondary;
+    }
+    .paragraphs{
+        color: $textSecondary;
+        > p{
+            margin-bottom: 1rem;
+        }
+        margin-bottom: 8rem;
+    }
+}
+
+.container{
+    display: grid;
+    @include md{
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}

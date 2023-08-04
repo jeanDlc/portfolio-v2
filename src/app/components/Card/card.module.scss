@@ -1,0 +1,52 @@
+@import "@/app/mixins";
+@import "@/app/variables.scss";
+
+
+.card{
+    h3{
+        font-size: $textXL;
+        margin-bottom: 15px;
+        &:hover{
+            color: $accentColor;
+            transition: color .3s ease-out;
+        }
+    }
+    
+    .cardContent{
+        display: grid;
+        z-index: 1;
+        gap: 1rem;
+        aside.footer{
+            order: 1;
+        }
+        @include md{
+            grid-template-columns: minmax(auto, 120px) 1fr;
+            aside.footer{
+                order: initial;
+            }
+        }
+        @include lg{
+            transition: all .3s ease-in-out;
+            &:hover{
+                box-shadow: rgba($color: #000000, $alpha: 0.25, );
+                background-color: rgba($color:white, $alpha:0.015);
+        
+            }
+            padding: 2rem 1.5rem;
+            border-radius: .3rem;
+
+        }    
+    }
+}
+
+.description{
+    font-size: $textS;
+    margin-bottom: 15px;
+    color: $textSecondary;
+}
+
+.date{
+    font-size: $textXS;
+    color: $textSecondary2;
+    text-transform: uppercase;
+}

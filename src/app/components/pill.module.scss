@@ -1,0 +1,13 @@
+@import "@/app/variables.scss";
+
+
+.pill {
+    background-color: rgba($color: $accentColor, $alpha: 0.2);
+    color: $accentColor;
+    box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+    font-weight: bold;
+    font-size: $textXS;
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: inline-block;
+}
