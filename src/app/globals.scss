@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 @media (prefers-color-scheme: dark) {
   /*apply dark settings*/
@@ -14,6 +15,7 @@
 body {
   background-color: $backgroundPrimary;
   color: $textColor;
+  font-size: $textBase;
 }
 
 a {

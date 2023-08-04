@@ -16,6 +16,9 @@
         display: grid;
         z-index: 1;
         gap: 1rem;
+        aside{
+            margin-top: 5px;
+        }
         aside.footer{
             order: 1;
         }

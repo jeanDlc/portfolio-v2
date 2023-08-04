@@ -1,7 +1,7 @@
 import { Project } from "@/types/interfaces";
 import styles from "./styles.module.scss";
-import { Card } from "../Card";
-import { Pill } from "../Pill";
+import { Card } from "@/app/components/Card";
+import { Pill } from "@/app/components/Pill";
 import Image from "next/image";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
@@ -14,17 +14,23 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 			url={demoUrl}
 			secondaryContent={
 				<div>
+					<a className={styles.repoUrl} href={repoUrl} target="_blank">
+						Github {"->"}
+					</a>
 					<div className={styles.stackList}>
 						{stack.map((tech) => (
 							<Pill key={tech} text={tech} />
 						))}
 					</div>
-					<a href={repoUrl} target="_blank">
-						Repo
-					</a>
 				</div>
 			}
-			asideChildren={{ footer: <Image src={image} alt="Alt image" /> }}
+			asideChildren={{
+				footer: (
+					<div className={styles.imageContainer}>
+						<Image src={image} alt="Alt image" className={styles.image} fill />
+					</div>
+				),
+			}}
 		/>
 	);
 };

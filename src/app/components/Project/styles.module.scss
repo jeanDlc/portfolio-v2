@@ -1,4 +1,36 @@
+@import "@/app/variables";
+@import "@/app/mixins";
+
 .stackList{
     display: flex;
     gap: 8px;
+}
+
+
+.imageContainer{
+    width: auto;
+    max-width: 250px;
+    position: relative;
+    height: 150px;
+
+    @include md{
+        height: 80px;
+        max-width: initial;
+    }
+}
+
+.image{
+    object-fit: contain;
+    border: 1px solid rgba($color: #ffffff1f, $alpha: 0.05);
+    border-radius: 2.5px;
+}
+
+.repoUrl{
+    transition: all .3s ease-out;
+    font-size: $textS;
+    margin-bottom: 1rem;
+    display: inline-block;
+    &:hover{
+        color: $accentColor;
+    }
 }

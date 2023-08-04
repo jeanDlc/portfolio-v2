@@ -1,3 +1,4 @@
+import { ProjectList } from "@/app/components/Project/list";
 import styles from "./page.module.scss";
 import { JobList } from "@/app/components/Job/list";
 
@@ -36,6 +37,7 @@ export default function Home() {
 
 					<JobList />
 					<a href="">View Full Resume</a>
+					<ProjectList />
 				</section>
 			</div>
 		</main>
