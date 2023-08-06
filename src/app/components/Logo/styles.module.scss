@@ -1,0 +1,53 @@
+@import "@/app/variables.scss";
+
+@keyframes gradientAnimation {
+    from{
+        transition: all .3s ease-out;
+        background: linear-gradient(to right, #F1BAFF ,#92EBFF, #ADFFC8);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+    to{
+        transition: all .3s ease-out;
+        background: linear-gradient(to left, #F1BAFF ,#ff92ed, #ADFFC8);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+  }
+
+.logo{
+    transition: all .3s ease-out;
+    background: linear-gradient(to right, #F1BAFF ,#92EBFF, #ADFFC8);
+    background-clip: text;
+    -webkit-background-clip: text; /* For older Safari support */
+    color: transparent;
+    font-size: $text7XL;
+    animation: gradientAnimation 5s infinite;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.logo {
+    background: linear-gradient(
+        to right,
+        #F1BAFF 20%,
+        #c9faad 30%,
+        #89ddff 70%,
+        #ADFFC8 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+    font-size: $text7XL;
+
+}

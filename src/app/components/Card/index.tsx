@@ -14,21 +14,23 @@ export const Card = ({ content, title, url, secondaryContent, asideChildren }: C
 	const hasHeader = "header" in asideChildren;
 	return (
 		<section className={styles.card}>
-			<div className={styles.cardContent}>
-				<aside className={!hasHeader ? styles.footer : undefined}>
-					{hasHeader ? (
-						<header> {asideChildren.header} </header>
-					) : (
-						<footer> {asideChildren.footer} </footer>
-					)}
-				</aside>
-				<main>
-					<h3>
-						<a href={url}>{title}</a>
-					</h3>
-					<p className={styles.description}> {content} </p>
-					{secondaryContent}
-				</main>
+			<div className={styles.container}>
+				<div className={styles.body}>
+					<aside className={!hasHeader ? styles.footer : undefined}>
+						{hasHeader ? (
+							<header> {asideChildren.header} </header>
+						) : (
+							<footer> {asideChildren.footer} </footer>
+						)}
+					</aside>
+					<main>
+						<h3>
+							<a href={url}>{title}</a>
+						</h3>
+						<p className={styles.description}> {content} </p>
+						{secondaryContent}
+					</main>
+				</div>
 			</div>
 		</section>
 	);

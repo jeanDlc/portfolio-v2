@@ -3,6 +3,7 @@
 
 
 .card{
+    
     h3{
         font-size: $textXL;
         margin-bottom: 15px;
@@ -11,8 +12,8 @@
             transition: color .3s ease-out;
         }
     }
-    
-    .cardContent{
+
+    .body{
         display: grid;
         z-index: 1;
         gap: 1rem;
@@ -21,12 +22,6 @@
         }
         aside.footer{
             order: 1;
-        }
-        @include md{
-            grid-template-columns: minmax(auto, 120px) 1fr;
-            aside.footer{
-                order: initial;
-            }
         }
         @include lg{
             transition: all .3s ease-in-out;
@@ -38,8 +33,21 @@
             padding: 2rem 1.5rem;
             border-radius: .3rem;
 
-        }    
+        }
     }
+    
+    .container{
+        container-type: inline-size;
+        @container(min-width:500px){
+            .body {
+                grid-template-columns: 120px 1fr;
+
+            }
+            aside.footer{
+                order: initial;
+            }
+        }   
+    }    
 }
 
 .description{

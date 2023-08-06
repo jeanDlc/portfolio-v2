@@ -1,13 +1,14 @@
 import { ProjectList } from "@/app/components/Project/list";
 import styles from "./page.module.scss";
 import { JobList } from "@/app/components/Job/list";
+import { Logo } from "./components/Logo";
 
 export default function Home() {
 	return (
 		<main className={styles.main}>
 			<div className={styles.container}>
 				<section>
-					<h1>JeanDLC</h1>
+					<Logo />
 					<h2>Full Stack dev</h2>
 					<p className={styles.description}>
 						I build accessible, inclusive products and digital experiences for the web
