@@ -27,7 +27,9 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 			asideChildren={{
 				footer: (
 					<div className={styles.imageContainer}>
-						<Image src={image} alt="Alt image" className={styles.image} fill />
+						<div className={styles.imageContainerChildren}>
+							<Image src={image} alt="Alt image" className={styles.image} fill />
+						</div>
 					</div>
 				),
 			}}

@@ -4,25 +4,30 @@
 .stackList{
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 
-.imageContainer{
-    width: auto;
-    max-width: 250px;
-    position: relative;
-    height: 150px;
-
-    @include md{
+.imageContainer{   
+    .imageContainerChildren{
+        position: relative;
+        width: clamp(100px, 100%, 250px);
         height: 80px;
-        max-width: initial;
+        .image{
+            object-fit: cover;
+            border: 1px solid rgba($color: #ffffff1f, $alpha: 0.05);
+            border-radius: 2.5px;
+        }
     }
-}
 
-.image{
-    object-fit: contain;
-    border: 1px solid rgba($color: #ffffff1f, $alpha: 0.05);
-    border-radius: 2.5px;
+    container-type: inline-size;
+    @container(min-width:300px){
+        .imageContainerChildren{
+            height: 150px;
+        }
+    }
+    
+        
 }
 
 .repoUrl{
