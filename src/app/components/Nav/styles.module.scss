@@ -1,0 +1,31 @@
+@import "@/app/variables.scss";
+
+.nav{
+    display: grid;
+    gap: 1.2rem;
+    a{
+        transition: all .3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: $textSecondary;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: $textS;
+        span{
+            transition: all .3s ease-in-out;
+            width: 1.5rem;
+            height: 1.5px;
+            background-color: $textSecondary;
+        }
+        
+        &.active, &:hover{
+            color: $textColor;
+            span{
+                background-color: $textColor;
+                width: 4rem;
+            }
+        }
+    }
+    
+}

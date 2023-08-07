@@ -3,8 +3,16 @@
 
 .main {
     margin-top: 2rem;
+    .position{
+
+        margin-bottom: 1rem;
+    }
     .description{
         color: $textSecondary;
+        margin-bottom: 1rem;
+    }
+    .navContainer{
+        margin-top: 5rem;
     }
     .paragraphs{
         color: $textSecondary;
@@ -18,7 +26,8 @@
 .container{
     display: grid;
     @include md{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 4fr 6fr;
+        gap: 1rem;
         
     }
 }

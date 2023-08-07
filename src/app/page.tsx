@@ -2,6 +2,7 @@ import { ProjectList } from "@/app/components/Project/list";
 import styles from "./page.module.scss";
 import { JobList } from "@/app/components/Job/list";
 import { Logo } from "./components/Logo";
+import { Nav } from "./components/Nav";
 
 export default function Home() {
 	return (
@@ -10,15 +11,13 @@ export default function Home() {
 				<div>
 					<header className={styles.header}>
 						<Logo />
-						<h2>Full Stack Dev</h2>
+						<h2 className={styles.position}>Full Stack Dev</h2>
 						<p className={styles.description}>
 							I build accessible, inclusive products and digital experiences for the web
 						</p>
-						<nav>
-							<a href="#about">About</a>
-							<a href="#experience">Experience</a>
-							<a href="#projects">Projects</a>
-						</nav>
+						<div className={styles.navContainer}>
+							<Nav />
+						</div>
 					</header>
 				</div>
 				<section>

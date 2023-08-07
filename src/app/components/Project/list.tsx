@@ -11,7 +11,7 @@ const getProjects = async () => {
 			name: "Build a Netflix clone",
 			stack: ["React", "SCSS", "Next.js", "Node.js"],
 			demoUrl: "",
-			id: "2",
+			id: "1",
 			image: "https://www.datocms-assets.com/43219/1618240535-urmoviesfoto.png",
 			repoUrl: "",
 			slug: "",
