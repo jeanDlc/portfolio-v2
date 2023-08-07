@@ -7,15 +7,22 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<div className={styles.container}>
+				<div>
+					<header className={styles.header}>
+						<Logo />
+						<h2>Full Stack Dev</h2>
+						<p className={styles.description}>
+							I build accessible, inclusive products and digital experiences for the web
+						</p>
+						<nav>
+							<a href="#about">About</a>
+							<a href="#experience">Experience</a>
+							<a href="#projects">Projects</a>
+						</nav>
+					</header>
+				</div>
 				<section>
-					<Logo />
-					<h2>Full Stack dev</h2>
-					<p className={styles.description}>
-						I build accessible, inclusive products and digital experiences for the web
-					</p>
-				</section>
-				<section>
-					<div className={styles.paragraphs}>
+					<div id="about" className={styles.paragraphs}>
 						<p>
 							Back in 2012, I decided to try my hand at creating custom Tumblr themes and
 							tumbled head first into the rabbit hole of coding and web development.
@@ -35,10 +42,14 @@ export default function Home() {
 							k s e e d s .
 						</p>
 					</div>
-
-					<JobList />
-					<a href="">View Full Resume</a>
-					<ProjectList />
+					<section id="experience">
+						<JobList />
+						<a href="">View Full Resume</a>
+					</section>
+					<div className={styles.separator} />
+					<section id="projects">
+						<ProjectList />
+					</section>
 				</section>
 			</div>
 		</main>

@@ -1,6 +1,11 @@
 @import "@/app/variables";
 @import "@/app/mixins";
 
+.container{
+    display: grid;
+    gap: 1rem;
+}
+
 .stackList{
     display: flex;
     gap: 8px;

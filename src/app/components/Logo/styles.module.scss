@@ -13,17 +13,9 @@
         background-clip: text;
         -webkit-background-clip: text;
     }
-  }
-
-.logo{
-    transition: all .3s ease-out;
-    background: linear-gradient(to right, #F1BAFF ,#92EBFF, #ADFFC8);
-    background-clip: text;
-    -webkit-background-clip: text; /* For older Safari support */
-    color: transparent;
-    font-size: $text7XL;
-    animation: gradientAnimation 5s infinite;
 }
+
+
 
 @keyframes textShine {
     0% {
@@ -48,6 +40,9 @@
     text-fill-color: transparent;
     background-size: 500% auto;
     animation: textShine 5s ease-in-out infinite alternate;
-    font-size: $text7XL;
+    font-size: clamp($text4XL, 10vw, $text8XL);
+    span{
+        font-weight: bold;
+    }
 
 }
