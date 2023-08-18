@@ -1,0 +1,66 @@
+@import "@/app/variables.scss";
+
+.main{
+    padding-top: clamp(20px,10vh ,100px);
+    h1{
+        font-size: clamp($text2XL, 3vw, $text5XL);
+        text-transform: capitalize;
+        margin: 15px 0px;
+    }
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    th, td{
+        text-align: start;
+        padding: 1rem;
+    }
+    th::first-letter{
+        text-transform: uppercase;
+    }
+    td{
+        color: $textSecondary;
+    }
+    tr{
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.5);
+        margin: 0;
+        border-collapse: collapse;
+    }
+    .projectName{
+        font-weight: bold;
+        color: $textColor;
+
+    }
+    a{
+        transition: color .3s ease-out;
+        padding: 10px;
+    }
+    a:hover{
+        color: $accentColor;
+
+    }
+
+     
+}
+.tableContainer{
+
+    container-type: inline-size;
+    @container(width<500px){
+        .lg, .md {
+            display:none;
+
+        }
+    } 
+    @container(width<1000px){
+        .lg {
+            display:none;
+
+        }
+    }  
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}

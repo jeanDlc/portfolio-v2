@@ -20,4 +20,5 @@ export interface Project {
 	demoUrl: string;
 	repoUrl: string;
 	id: string;
+	company?: string;
 }

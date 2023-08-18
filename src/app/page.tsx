@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import { JobList } from "@/app/components/Job/list";
 import { Logo } from "./components/Logo";
 import { Nav } from "./components/Nav";
+import Link from "next/link";
 
 export default function Home() {
 	return (
@@ -48,6 +49,7 @@ export default function Home() {
 					<div className={styles.separator} />
 					<section id="projects">
 						<ProjectList />
+						<Link href={"/all-projects"}>All projects</Link>
 					</section>
 				</section>
 			</div>
