@@ -1,12 +1,10 @@
 export interface Job {
-	position: string;
+	role: string;
 	company: string;
 	description: string;
 	url: string;
-	date: {
-		from: string;
-		to?: string;
-	};
+	from: string;
+	to?: string;
 	stack: string[];
 	id: string;
 }
@@ -14,11 +12,13 @@ export interface Job {
 export interface Project {
 	name: string;
 	description: string;
-	image: string;
+	image: {
+		url: string;
+	};
 	slug: string;
 	stack: string[];
-	demoUrl: string;
-	repoUrl: string;
+	demourl: string;
+	repourl: string;
 	id: string;
 	company?: string;
 }

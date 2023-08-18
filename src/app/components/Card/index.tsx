@@ -25,7 +25,9 @@ export const Card = ({ content, title, url, secondaryContent, asideChildren }: C
 					</aside>
 					<main>
 						<h3>
-							<a href={url}>{title}</a>
+							<a href={url} target="_blank" rel="noopener">
+								{title}
+							</a>
 						</h3>
 						<p className={styles.description}> {content} </p>
 						{secondaryContent}

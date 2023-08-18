@@ -29,7 +29,7 @@
     .projectName{
         font-weight: bold;
         color: $textColor;
-
+        text-transform: lowercase;
     }
     a{
         transition: color .3s ease-out;
@@ -61,6 +61,7 @@
 
 .links{
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
+    text-transform: lowercase;
 }

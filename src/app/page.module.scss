@@ -10,6 +10,9 @@
     .description{
         color: $textSecondary;
         margin-bottom: 1rem;
+        span{
+            font-weight: bold;
+        }
     }
     .navContainer{
         margin-top: 5rem;

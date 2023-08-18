@@ -5,7 +5,7 @@ import { Pill } from "@/app/components/Pill";
 import Image from "next/image";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
-	const { demoUrl, description, image, name, repoUrl, stack } = project;
+	const { demourl: demoUrl, description, image, name, repourl: repoUrl, stack } = project;
 
 	return (
 		<Card
@@ -28,7 +28,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 				footer: (
 					<div className={styles.imageContainer}>
 						<div className={styles.imageContainerChildren}>
-							<Image src={image} alt="Alt image" className={styles.image} fill />
+							<Image src={image.url} alt="Alt image" className={styles.image} fill />
 						</div>
 					</div>
 				),

@@ -4,8 +4,69 @@ import { JobList } from "@/app/components/Job/list";
 import { Logo } from "./components/Logo";
 import { Nav } from "./components/Nav";
 import Link from "next/link";
+import { performRequest } from "@/lib/cms";
 
-export default function Home() {
+import type { Job, Project } from "@/types/interfaces";
+
+const PROJECTS_QUERY = `
+	query {
+		allProjects (first : 5 ) {
+			id
+			name
+			image{
+				url
+			}
+			demourl
+			repourl
+			stack
+			company
+			description
+			slug
+		}
+	}
+
+`;
+
+const getProjects = async () => {
+	const { allProjects } = await performRequest<{
+		allProjects: Project[];
+	}>({
+		query: PROJECTS_QUERY,
+		variables: {},
+	});
+	return allProjects;
+};
+
+const JOBS_QUERY = `
+	query {
+		allJobs (first : 5 ) {
+			id
+			role
+			company
+			description
+			url
+			from
+			to
+			stack
+		}
+	}
+
+`;
+
+const getJobs = async () => {
+	const { allJobs } = await performRequest<{
+		allJobs: Job[];
+	}>({
+		query: JOBS_QUERY,
+		variables: {},
+	});
+	return allJobs;
+};
+
+export default async function Home() {
+	const projects = await getProjects();
+	const jobs = await getJobs();
+
 	return (
 		<main className={styles.main}>
 			<div className={styles.container}>
@@ -14,7 +75,8 @@ export default function Home() {
 						<Logo />
 						<h2 className={styles.position}>Full Stack Dev</h2>
 						<p className={styles.description}>
-							I build accessible, inclusive products and digital experiences for the web
+							Hi, my name is <span>Jean Pierre de la Cruz</span> . I build accessible,
+							inclusive products and digital experiences for the web
 						</p>
 						<div className={styles.navContainer}>
 							<Nav />
@@ -43,12 +105,12 @@ export default function Home() {
 						</p>
 					</div>
 					<section id="experience">
-						<JobList />
+						<JobList jobs={jobs} />
 						<a href="">View Full Resume</a>
 					</section>
 					<div className={styles.separator} />
 					<section id="projects">
-						<ProjectList />
+						<ProjectList projects={projects} />
 						<Link href={"/all-projects"}>All projects</Link>
 					</section>
 				</section>

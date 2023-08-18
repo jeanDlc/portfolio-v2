@@ -1,5 +1,3 @@
-import type { Job } from "@/types/interfaces";
-
 const displayDate = (from: string | number, to: string | number) => {
 	return [from, to].join(" ─ ");
 };
@@ -29,8 +27,7 @@ export const getMonth = (date: Date) => MONTHS[date.getMonth()];
  * "2022 - 2023"
  * "2021 - PRESENT"
  */
-export const parseDate = (date: Job["date"]) => {
-	const { from, to } = date;
+export const parseDate = (from: string, to?: string) => {
 	const dateFrom = new Date(from);
 	if (!to) {
 		return displayDate(dateFrom.getFullYear(), "PRESENT");

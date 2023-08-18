@@ -1,59 +1,39 @@
 import Link from "next/link";
 import { Pill } from "../components/Pill";
+import { performRequest } from "@/lib/cms";
 
 import styles from "./styles.module.scss";
 
 import type { Project } from "@/types/interfaces";
 
-const getAllProjects = () => {
-	const projects: Project[] = [
-		{
-			description:
-				"Netflix clone is a web app replicating Netflix, with a vast library of movies, shows, and original content. Personalized profiles, curated recommendations, and HD playback offer seamless entertainment. Device compatibility ensures easy binge-watching anytime, anywhere.",
-			name: "Build a Netflix clone",
-			stack: ["React", "SCSS", "Next.js", "Node.js"],
-			demoUrl: "",
-			id: "1",
-			image: "https://www.datocms-assets.com/43219/1618240535-urmoviesfoto.png",
-			repoUrl: "as",
-			slug: "",
-			company: "Globant",
-		},
-		{
-			description:
-				"Code Play is an online HTML, CSS and JavaScript editor. You can code in real time and share the link with anybody",
-			name: "Code Play",
-			stack: ["JavaScript", "HMTL", "CSS"],
-			demoUrl: "https://code-play.vercel.app/%7C%7C",
-			id: "2",
-			image: "https://www.datocms-assets.com/43219/1633033971-codeplay.png",
-			repoUrl: "as",
-			slug: "",
-		},
-		{
-			description:
-				"Netflix clone is a web app replicating Netflix, with a vast library of movies, shows, and original content. Personalized profiles, curated recommendations, and HD playback offer seamless entertainment. Device compatibility ensures easy binge-watching anytime, anywhere.",
-			name: "Build a Netflix clone",
-			stack: ["React", "SCSS", "Next.js", "Node.js"],
-			demoUrl: "",
-			id: "3",
-			image: "https://www.datocms-assets.com/43219/1618240535-urmoviesfoto.png",
-			repoUrl: "",
-			slug: "",
-		},
-		{
-			description:
-				"Code Play is an online HTML, CSS and JavaScript editor. You can code in real time and share the link with anybody",
-			name: "Code Play",
-			stack: ["JavaScript", "HMTL", "CSS"],
-			demoUrl: "https://code-play.vercel.app/%7C%7C",
-			id: "4",
-			image: "https://www.datocms-assets.com/43219/1633033971-codeplay.png",
-			repoUrl: "",
-			slug: "",
-		},
-	];
-	return Promise.resolve(projects);
+const ALL_PROJECTS_QUERY = `
+	query {
+		allProjects {
+			id
+			name
+			image{
+				url
+			}
+			demourl
+			repourl
+			stack
+			company
+		}
+	}
+
+`;
+
+const getAllProjects = async () => {
+	const { allProjects } = await performRequest<{
+		allProjects: Pick<
+			Project,
+			"id" | "name" | "image" | "demourl" | "repourl" | "stack" | "company"
+		>[];
+	}>({
+		query: ALL_PROJECTS_QUERY,
+		variables: {},
+	});
+	return allProjects;
 };
 
 export default async function AllProjectsPage() {
@@ -82,7 +62,7 @@ export default async function AllProjectsPage() {
 									<td> {idx + 1} </td>
 									<td>
 										<a
-											href={project.demoUrl}
+											href={project.demourl}
 											target="_blank"
 											referrerPolicy="no-referrer"
 											className={styles.projectName}
@@ -91,7 +71,7 @@ export default async function AllProjectsPage() {
 											<span>{" ->"} </span>
 										</a>
 									</td>
-									<td className={styles.lg}> {project.company ?? "-"} </td>
+									<td className={styles.lg}> {project.company || "-"} </td>
 									<td className={styles.lg}>
 										<div style={{ display: "flex", gap: 10 }}>
 											{project.stack.map((tech) => (
@@ -100,15 +80,15 @@ export default async function AllProjectsPage() {
 										</div>
 									</td>
 									<td className={styles.md}>
-										{project.demoUrl || project.repoUrl ? (
+										{project.demourl || project.repourl ? (
 											<div className={styles.links}>
-												{project.demoUrl && (
-													<a target="_blank" href={project.demoUrl}>
+												{project.demourl && (
+													<a target="_blank" href={project.demourl}>
 														{"Web ->"}
 													</a>
 												)}
-												{project.repoUrl && (
-													<a target="_blank" href={project.repoUrl}>
+												{project.repourl && (
+													<a target="_blank" href={project.repourl}>
 														{"Github ->"}
 													</a>
 												)}
