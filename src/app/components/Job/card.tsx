@@ -12,7 +12,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 			<Card
 				key={id}
 				content={description}
-				title={`${role} . ${company}`}
+				title={`${role} · ${company}`}
 				url={url}
 				secondaryContent={
 					<div className={styles.stackList}>
