@@ -12,9 +12,7 @@ export interface Job {
 export interface Project {
 	name: string;
 	description: string;
-	image: {
-		url: string;
-	};
+	image: Record<string, string>;
 	slug: string;
 	stack: string[];
 	demourl: string;

@@ -11,9 +11,6 @@ const ALL_PROJECTS_QUERY = `
 		allProjects {
 			id
 			name
-			image{
-				url
-			}
 			demourl
 			repourl
 			stack
@@ -25,10 +22,7 @@ const ALL_PROJECTS_QUERY = `
 
 const getAllProjects = async () => {
 	const { allProjects } = await performRequest<{
-		allProjects: Pick<
-			Project,
-			"id" | "name" | "image" | "demourl" | "repourl" | "stack" | "company"
-		>[];
+		allProjects: Pick<Project, "id" | "name" | "demourl" | "repourl" | "stack" | "company">[];
 	}>({
 		query: ALL_PROJECTS_QUERY,
 		variables: {},

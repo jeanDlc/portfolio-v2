@@ -15,6 +15,8 @@ const PROJECTS_QUERY = `
 			name
 			image{
 				url
+				blurUpThumb
+				alt
 			}
 			demourl
 			repourl
