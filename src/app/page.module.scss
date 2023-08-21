@@ -14,9 +14,6 @@
             font-weight: bold;
         }
     }
-    .navContainer{
-        margin-top: 5rem;
-    }
     .paragraphs{
         color: $textSecondary;
         > p{
@@ -41,4 +38,28 @@
 .header{
     position: sticky;
     top: 2rem;
+}
+
+.desktopNavigation{
+    margin-top: 5rem;
+    display: none;
+    @include md{
+        display: inherit;
+    }
+}
+
+.mobileNavigation{
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 15px 0px; 
+    backdrop-filter: blur(100px);
+    background-color: rgba($color: $backgroundPrimary, $alpha: 0.95);
+    z-index: 1;
+    text-transform: uppercase;
+    font-size: $textBase;
+    @include md{
+        display: none;
+    }
 }

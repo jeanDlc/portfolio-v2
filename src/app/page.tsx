@@ -80,13 +80,15 @@ export default async function Home() {
 							Hi, my name is <span>Jean Pierre de la Cruz</span> . I build accessible,
 							inclusive products and digital experiences for the web
 						</p>
-						<div className={styles.navContainer}>
+						<div className={styles.desktopNavigation}>
 							<Nav />
 						</div>
 					</header>
 				</div>
 				<section>
 					<div id="about" className={styles.paragraphs}>
+						<h3 className={styles.mobileNavigation}>About </h3>
+
 						<p>
 							Back in 2012, I decided to try my hand at creating custom Tumblr themes and
 							tumbled head first into the rabbit hole of coding and web development.
@@ -106,12 +108,17 @@ export default async function Home() {
 							k s e e d s .
 						</p>
 					</div>
+
 					<section id="experience">
+						<h3 className={styles.mobileNavigation}>Experience </h3>
 						<JobList jobs={jobs} />
 						<a href="">View Full Resume</a>
 					</section>
+
 					<div className={styles.separator} />
+
 					<section id="projects">
+						<h3 className={styles.mobileNavigation}>Projects </h3>
 						<ProjectList projects={projects} />
 						<Link href={"/all-projects"}>All projects</Link>
 					</section>

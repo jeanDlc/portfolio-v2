@@ -12,6 +12,7 @@ interface CardProps {
 
 export const Card = ({ content, title, url, secondaryContent, asideChildren }: CardProps) => {
 	const hasHeader = "header" in asideChildren;
+
 	return (
 		<section className={styles.card}>
 			<div className={styles.container}>
@@ -24,9 +25,9 @@ export const Card = ({ content, title, url, secondaryContent, asideChildren }: C
 						)}
 					</aside>
 					<main>
-						<h3>
+						<h3 className={styles.title}>
 							<a href={url} target="_blank" rel="noopener">
-								{title}
+								{title.toLowerCase()}
 							</a>
 						</h3>
 						<p className={styles.description}> {content} </p>
