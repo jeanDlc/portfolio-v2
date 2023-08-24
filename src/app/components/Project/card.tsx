@@ -3,9 +3,10 @@ import styles from "./styles.module.scss";
 import { Card } from "@/app/components/Card";
 import { Pill } from "@/app/components/Pill";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
-	const { demourl: demoUrl, description, image, name, repourl: repoUrl, stack } = project;
+	const { demourl: demoUrl, description, image, name, repourl: repoUrl, stack, id } = project;
 
 	return (
 		<Card
@@ -17,6 +18,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 					<a className={styles.repoUrl} href={repoUrl} target="_blank">
 						Github {"->"}
 					</a>
+					<Link href={`/projects/${id}`}> See more</Link>
 					<div className={styles.stackList}>
 						{stack.map((tech) => (
 							<Pill key={tech} text={tech} />
